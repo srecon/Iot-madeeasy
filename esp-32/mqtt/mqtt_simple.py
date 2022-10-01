@@ -55,7 +55,8 @@ while True:
   try:
     client.check_msg()
     if (time.time() - last_message) > message_interval:
-      msg = b'Hello #%d' % counter
+      #msg = b'Hello #%d' % counter
+      msg = b'weather,location=us-midwest temperature=%d'% counter  
       client.publish(topic_pub, msg)
       #print ("publish msg ", msg)
       last_message = time.time()
